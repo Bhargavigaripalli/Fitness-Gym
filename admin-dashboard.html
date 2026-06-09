@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | STACKLY Performance & Wellness</title>
+  <meta name="description" content="STACKLY administrator command center. Track member signups, monthly analytics, and trainer activities.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body data-dashboard-role="admin">
+
+  <div class="dashboard-wrapper">
+    
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          STACKLY<span>.</span>
+        </a>
+      </div>
+      
+      <!-- User Profile Card -->
+      <div class="sidebar-user">
+        <div class="user-avatar session-user-avatar">A</div>
+        <div class="user-info">
+          <h4 class="session-user-name">Administrator</h4>
+          <p>Super Admin</p>
+        </div>
+      </div>
+      
+      <!-- Nav Menu Links -->
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+          Overview
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Members List
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Coaches & Trainers
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Class Schedules
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Billing & Payments
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Settings
+        </a>
+      </nav>
+      
+      <!-- Logout Button -->
+      <div class="sidebar-footer">
+        <a href="#" class="btn btn-outline-primary logout-trigger" style="width: 100%; padding: 10px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA
+         ========================================================================== -->
+    <main class="dashboard-content">
+      
+      <!-- Top Action Bar -->
+      <div class="dashboard-topbar">
+        <button class="dashboard-toggle-btn" id="sidebar-toggle" aria-label="Toggle Navigation">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+        <div class="topbar-title">
+          <h2>Overview Dashboard</h2>
+          <p>Welcome back, <span class="text-primary session-user-name">Admin</span>! Here's today's overview.</p>
+        </div>
+        <div class="topbar-actions">
+          <a href="index.html" class="btn btn-secondary btn-sm" id="admin-home-btn" style="padding: 10px 20px; font-size: 0.8rem;">
+            Back to Home
+          </a>
+        </div>
+      </div>
+
+      <!-- KPI statistics Widgets -->
+      <section class="dashboard-stats-grid">
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>15,420</h3>
+            <p>Active Members</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+4.2% this wk</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>52</h3>
+            <p>Certified Coaches</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+1.8% this mo</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10v6M12 2v20M2 10h20"></path></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>$48,250</h3>
+            <p>Monthly Revenue</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+8.5% this mo</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>84%</h3>
+            <p>Gym Capacity</p>
+            <div class="stat-trend down">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <span>-1.2% average</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Visual Section (Chart and List) -->
+      <div class="dashboard-grid-2">
+        
+        <!-- Glowing Revenue SVG Chart -->
+        <div class="dashboard-panel-card">
+          <div class="panel-card-header">
+            <h3>Revenue Growth</h3>
+            <button class="btn btn-secondary btn-sm dashboard-404-btn" style="padding: 6px 12px; font-size: 0.75rem;">Export PDF</button>
+          </div>
+          <div class="chart-container">
+            <svg class="chart-svg" viewBox="0 0 500 200">
+              <defs>
+                <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--primary)" />
+                  <stop offset="100%" stop-color="var(--primary)" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              
+              <!-- Grid Lines -->
+              <line x1="40" y1="30" x2="480" y2="30" class="chart-grid-line" />
+              <line x1="40" y1="80" x2="480" y2="80" class="chart-grid-line" />
+              <line x1="40" y1="130" x2="480" y2="130" class="chart-grid-line" />
+              <line x1="40" y1="180" x2="480" y2="180" class="chart-grid-line" />
+              
+              <!-- Chart Line & Filled Area -->
+              <path d="M 40,160 Q 120,130 200,100 T 360,50 T 480,40" class="chart-line" />
+              <path d="M 40,160 Q 120,130 200,100 T 360,50 T 480,40 L 480,180 L 40,180 Z" class="chart-area" />
+              
+              <!-- Points -->
+              <circle cx="40" cy="160" class="chart-point" />
+              <circle cx="150" cy="120" class="chart-point" />
+              <circle cx="260" cy="85" class="chart-point" />
+              <circle cx="370" cy="50" class="chart-point" />
+              <circle cx="480" cy="40" class="chart-point" />
+              
+              <!-- Axis text labels -->
+              <text x="35" y="195" class="chart-axis-text">Jan</text>
+              <text x="145" y="195" class="chart-axis-text">Feb</text>
+              <text x="255" y="195" class="chart-axis-text">Mar</text>
+              <text x="365" y="195" class="chart-axis-text">Apr</text>
+              <text x="475" y="195" class="chart-axis-text">May</text>
+              
+              <text x="15" y="163" class="chart-axis-text">$10K</text>
+              <text x="15" y="123" class="chart-axis-text">$25K</text>
+              <text x="15" y="88" class="chart-axis-text">$40K</text>
+              <text x="15" y="53" class="chart-axis-text">$50K</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Recent Signups List widget -->
+        <div class="dashboard-panel-card">
+          <div class="panel-card-header">
+            <h3>Quick Actions</h3>
+          </div>
+          <div class="dashboard-list">
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(255, 179, 0, 0.1); color: var(--secondary);">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5>Add New Trainer</h5>
+                  <p>Assign credentials & roles</p>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 6px 12px; font-size: 0.75rem;">Create</button>
+            </div>
+            
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(0, 242, 254, 0.1); color: #00f2fe;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5>Manage Schedules</h5>
+                  <p>Edit time blocks & classes</p>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 6px 12px; font-size: 0.75rem;">Edit</button>
+            </div>
+
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5>System Reports</h5>
+                  <p>Review metrics logs</p>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 6px 12px; font-size: 0.75rem;">View</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Registration Table Section -->
+      <section class="dashboard-panel-card">
+        <div class="panel-card-header">
+          <h3>Recent Registrations</h3>
+          <button class="btn btn-secondary btn-sm dashboard-404-btn" style="padding: 8px 16px; font-size: 0.8rem;">View All Members</button>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Member Name</th>
+                <th>Email Address</th>
+                <th>Selected Plan</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sarah Miller</td>
+                <td>sarah.miller@apex.com</td>
+                <td>Premium Wellness</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td><button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 4px 10px; font-size: 0.7rem;">Manage</button></td>
+              </tr>
+              <tr>
+                <td>John Doe</td>
+                <td>john.doe@email.com</td>
+                <td>Strength Training</td>
+                <td><span class="badge-status pending">Pending</span></td>
+                <td><button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 4px 10px; font-size: 0.7rem;">Manage</button></td>
+              </tr>
+              <tr>
+                <td>Emily Davis</td>
+                <td>emily.d@gmail.com</td>
+                <td>Basic Membership</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td><button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 4px 10px; font-size: 0.7rem;">Manage</button></td>
+              </tr>
+              <tr>
+                <td>Michael Brown</td>
+                <td>mbrown@yahoo.com</td>
+                <td>Elite Nutrition</td>
+                <td><span class="badge-status inactive">Inactive</span></td>
+                <td><button class="btn btn-primary btn-sm dashboard-404-btn" style="padding: 4px 10px; font-size: 0.7rem;">Manage</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

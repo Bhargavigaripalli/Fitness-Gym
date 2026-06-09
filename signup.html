@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | STACKLY Performance & Wellness</title>
+  <meta name="description" content="Join STACKLY Performance & Wellness today. Access top-tier gym facility bookings, diet calculators, and professional trainers.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-card" style="margin-top: 30px; margin-bottom: 30px;">
+    <!-- Back to Home -->
+    <a href="index.html" class="back-to-home-btn" id="signup-back-home">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+
+    <!-- Header / Brand -->
+    <div class="auth-header">
+      <div class="auth-logo">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <span>STACKLY.</span>
+      </div>
+      <h2>Create Account</h2>
+      <p>Register to start your fitness journey</p>
+    </div>
+
+    <!-- Signup Form -->
+    <form class="auth-form" id="signup-form" novalidate>
+      
+      <!-- Select Role -->
+      <div class="form-group">
+        <label class="calc-label" for="signup-role">Register As</label>
+        <select class="form-select" id="signup-role" name="role" required>
+          <option value="member">Member</option>
+          <option value="trainer">Trainer</option>
+          <option value="admin">Administrator</option>
+        </select>
+      </div>
+
+      <!-- Name -->
+      <div class="form-group">
+        <label class="calc-label" for="signup-name">Full Name</label>
+        <input type="text" class="form-input" id="signup-name" name="name" placeholder="Letters only (max 16)" required maxlength="16" autocomplete="name">
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label class="calc-label" for="signup-email">Email Address</label>
+        <input type="email" class="form-input" id="signup-email" name="email" placeholder="name@domain.com" required autocomplete="email">
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="calc-label" for="signup-password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" class="form-input" id="signup-password" name="password" placeholder="••••••••" required autocomplete="new-password">
+          <button type="button" class="password-toggle" data-target="signup-password" aria-label="Toggle password visibility">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Strength Meter UI -->
+        <div class="strength-meter">
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+        </div>
+        <span class="strength-text"></span>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label class="calc-label" for="signup-confirm-password">Confirm Password</label>
+        <div class="password-wrapper">
+          <input type="password" class="form-input" id="signup-confirm-password" name="confirmPassword" placeholder="••••••••" required autocomplete="new-password">
+          <button type="button" class="password-toggle" data-target="signup-confirm-password" aria-label="Toggle password visibility">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Submit CTA -->
+      <button type="submit" class="btn btn-primary" id="signup-submit" style="width: 100%; margin-top: 10px;">
+        Register Account
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </form>
+
+    <!-- Navigation to Log In -->
+    <div class="auth-footer-links">
+      Already have an account? <a href="login.html" id="link-login">Sign In</a>
+    </div>
+
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

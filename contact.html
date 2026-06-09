@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Join | APEX Performance & Wellness</title>
+  <meta name="description" content="Get in touch with the APEX team to book a tour, request a free personal training session, or submit membership registration details.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Subpage Hero specific styling */
+    .sub-hero {
+      height: 350px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+    .sub-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 12, 16, 0.5) 0%,
+        rgba(11, 12, 16, 0.9) 100%
+      );
+      z-index: -1;
+    }
+    .sub-hero-content {
+      width: 100%;
+    }
+    .sub-hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .breadcrumbs {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .breadcrumbs span {
+      color: var(--primary);
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header" id="navbar">
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="logo-link">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        STACKLY<span>.</span>
+      </a>
+      
+      <nav class="nav-menu" id="navigation-menu">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="about.html" class="nav-link" id="nav-about">About Us</a>
+        <a href="classes.html" class="nav-link" id="nav-classes">Classes & Schedule</a>
+        <a href="bmi.html" class="nav-link" id="nav-bmi">Calorie & BMI</a>
+        <a href="contact.html" class="nav-link active" id="nav-contact">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="login.html" class="nav-link" id="nav-login-link" style="margin-right: 20px; font-weight: 600; font-size: 0.9rem;">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-btn" style="padding: 10px 20px; font-size: 0.8rem;">
+          Join Now
+        </a>
+        <button class="nav-toggle" id="menu-toggle" aria-label="Toggle navigation Menu" style="margin-left: 20px;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SUBPAGE HERO
+       ========================================================================== -->
+  <section class="sub-hero" style="background-image: url('assets/images/hero.png');" id="contact-hero">
+    <div class="sub-hero-overlay"></div>
+    <div class="container">
+      <div class="sub-hero-content reveal reveal-fade">
+        <div class="breadcrumbs">Home <span>/</span> Contact & Join</div>
+        <h1>Get in Touch</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT FORM & DETAILS GRID
+       ========================================================================== -->
+  <section class="section" id="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Details Column -->
+        <div class="reveal reveal-left" id="contact-details-col">
+          <span class="tagline">Contact Apex</span>
+          <h2 style="font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase;">Let's Connect</h2>
+          <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem;">
+            Have questions about our training systems, pricing options, or certified trainers? Fill out the membership form and our performance consulting group will respond within 12 hours.
+          </p>
+
+          <!-- Card 1 -->
+          <div class="contact-info-card" id="detail-card-location">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="contact-info-details">
+              <h3>Facility Address</h3>
+              <p>100 Apex Boulevard, Performance District, FL 33101</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="contact-info-card" id="detail-card-phone">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-info-details">
+              <h3>Direct Telephone</h3>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="contact-info-card" id="detail-card-email">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-info-details">
+              <h3>Support Email</h3>
+              <p>info@apexperformance.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="reveal reveal-right" id="contact-form-col">
+          <div class="contact-form-wrapper">
+            <h3 style="font-size: 1.8rem; margin-bottom: 24px; text-transform: uppercase; text-align: center;">Enquiry Sheet</h3>
+            <form id="contact-form" novalidate>
+              <div class="calc-group">
+                <label class="calc-label" for="form-name">Full Name *</label>
+                <input type="text" class="form-input" id="form-name" placeholder="e.g. Robert Smith" required>
+              </div>
+
+              <div class="form-row-2">
+                <div class="calc-group">
+                  <label class="calc-label" for="form-email">Email Address *</label>
+                  <input type="email" class="form-input" id="form-email" placeholder="e.g. robert@mail.com" required>
+                </div>
+                <div class="calc-group">
+                  <label class="calc-label" for="form-phone">Phone Number</label>
+                  <input type="tel" class="form-input" id="form-phone" placeholder="e.g. +1 555-0987">
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-label" for="form-interest">Program Interest</label>
+                <select class="form-select" id="form-interest" aria-label="Program of interest selection">
+                  <option value="general">General Gym Access</option>
+                  <option value="strength">Apex Barbell Strength</option>
+                  <option value="cardio">HIIT Metcon Cardio</option>
+                  <option value="yoga">Yoga Vinyasa & Mobility</option>
+                  <option value="personal">1-on-1 Personal Coaching</option>
+                </select>
+              </div>
+
+              <div class="calc-group">
+                <label class="calc-label" for="form-message">Enquiry Message *</label>
+                <textarea class="form-textarea" id="form-message" rows="5" placeholder="Write details about your training goals..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: 100%; margin-top: 10px;">
+                Submit Enquiry
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MAP SECTION
+       ========================================================================== -->
+  <section class="map-section" id="location-map">
+    <div class="map-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <h3>Performance Location Map Integrated</h3>
+      <p style="font-size: 0.9rem; margin-top: 4px;">100 Apex Boulevard, FL 33101</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+  <section class="section section-dark" id="faq-section">
+    <div class="container">
+      <div class="section-header text-center reveal reveal-up">
+        <span class="tagline">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about the APEX membership policies and training facilities.</p>
+      </div>
+
+      <div class="faq-accordion reveal reveal-scale" id="accordion-group">
+        <!-- FAQ 1 -->
+        <div class="faq-item" id="faq-1">
+          <div class="faq-header">
+            <h3>Can I access the facility at any hour of the day?</h3>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content">
+              Yes, all APEX memberships include full 24/7 keyless biometric entry. Your fingerprint scan will grant access through our secure entry doors outside normal reception staffing hours.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" id="faq-2">
+          <div class="faq-header">
+            <h3>Are team classes included in the pricing packages?</h3>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content">
+              Group classes and scheduled training activities are included in our Performance and Elite membership tiers. Basic tier members can join classes by paying a drop-in fee of $15 per session.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" id="faq-3">
+          <div class="faq-header">
+            <h3>Is there a contract lock-in period?</h3>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content">
+              We offer month-to-month arrangements with zero lock-in contracts on all tiers. You can cancel or pause your subscription at any time with a standard 10-day notice written to info@apexperformance.com.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item" id="faq-4">
+          <div class="faq-header">
+            <h3>Do you offer facilities for showers and lockers?</h3>
+            <div class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content">
+              Yes, our facility is equipped with clean changing rooms, private security lockers, and walk-in hot showers complete with shampoo and towel service for all active members.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="footer-section">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-brand" id="footer-logo-col">
+          <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            STACKLY<span>.</span>
+          </a>
+          <p>Unlocking human performance and building long-term fitness cultures through structured coaching and elite-tier equipment.</p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-icon" aria-label="Facebook link">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="404.html" class="social-icon" aria-label="Instagram link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-icon" aria-label="Twitter/X link">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-column" id="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" id="fl-home">Home</a></li>
+            <li><a href="about.html" id="fl-about">About Us</a></li>
+            <li><a href="classes.html" id="fl-classes">Classes & Programs</a></li>
+            <li><a href="bmi.html" id="fl-bmi">Health Calculator</a></li>
+            <li><a href="contact.html" id="fl-contact">Contact & Join</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-column" id="footer-hours-col">
+          <h3>Operating Hours</h3>
+          <ul class="footer-links" style="color: var(--text-muted); font-size: 0.95rem;">
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Weekdays:</span> <span class="text-light">24 Hours Open</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Saturdays:</span> <span class="text-light">6:00 AM - 10:00 PM</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Sundays:</span> <span class="text-light">8:00 AM - 8:00 PM</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Public Holidays:</span> <span class="text-primary">Closed</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-column" id="footer-contact-col">
+          <h3>Get In Touch</h3>
+          <ul class="footer-info">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>100 Apex Boulevard, Performance District, FL 33101</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>info@apexperformance.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Performance & Wellness. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" id="f-privacy">Privacy Policy</a>
+          <a href="#" id="f-terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

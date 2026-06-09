@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard | STACKLY Performance & Wellness</title>
+  <meta name="description" content="STACKLY personal member hub. View calories burned, weekly training program logs, and workout metrics.">
+  <link class="styles" rel="stylesheet" href="css/style.css">
+  <link class="styles" rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body data-dashboard-role="member">
+
+  <div class="dashboard-wrapper">
+    
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          STACKLY<span>.</span>
+        </a>
+      </div>
+      
+      <!-- User Profile Card -->
+      <div class="sidebar-user">
+        <div class="user-avatar session-user-avatar">M</div>
+        <div class="user-info">
+          <h4 class="session-user-name">Sarah Miller</h4>
+          <p>Elite Member</p>
+        </div>
+      </div>
+      
+      <!-- Nav Menu Links -->
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+          Overview
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          Workout Routine
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Nutrition Tracker
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Class Bookings
+        </a>
+        <a href="bmi.html" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          BMI Calculator
+        </a>
+        <a href="#" class="sidebar-link dashboard-404-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Settings
+        </a>
+      </nav>
+      
+      <!-- Logout Button -->
+      <div class="sidebar-footer">
+        <a href="#" class="btn btn-outline-primary logout-trigger" style="width: 100%; padding: 10px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA
+         ========================================================================== -->
+    <main class="dashboard-content">
+      
+      <!-- Top Action Bar -->
+      <div class="dashboard-topbar">
+        <button class="dashboard-toggle-btn" id="sidebar-toggle" aria-label="Toggle Navigation">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+        <div class="topbar-title">
+          <h2>Member Hub</h2>
+          <p>Welcome back, <span class="text-primary session-user-name">Athlete</span>! Keep up the hard work.</p>
+        </div>
+        <div class="topbar-actions">
+          <a href="index.html" class="btn btn-secondary btn-sm" id="member-home-btn" style="padding: 10px 20px; font-size: 0.8rem;">
+            Back to Home
+          </a>
+        </div>
+      </div>
+
+      <!-- Member stats widgets -->
+      <section class="dashboard-stats-grid">
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>12</h3>
+            <p>Workouts Done</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+2 this week</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>4,820</h3>
+            <p>Calories Burned</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+560 kcal this wk</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>68</h3>
+            <p>Avg Heart Rate</p>
+            <div class="stat-trend" style="color: var(--text-muted);">
+              <span>stable resting</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+          <div class="stat-card-details">
+            <h3>5 days</h3>
+            <p>Active Days / wk</p>
+            <div class="stat-trend up">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              <span>+1 day increase</span>
+            </div>
+          </div>
+          <div class="stat-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Visual Section (Progress rings and Schedules) -->
+      <div class="dashboard-grid-2">
+        
+        <!-- Glowing Calories Burned Progress Ring -->
+        <div class="dashboard-panel-card" style="position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div class="panel-card-header" style="width: 100%;">
+            <h3>Daily Burn Target</h3>
+          </div>
+          
+          <div class="progress-ring-container">
+            <svg class="progress-ring-svg" width="180" height="180">
+              <defs>
+                <linearGradient id="ring-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="var(--primary)" />
+                  <stop offset="100%" stop-color="var(--secondary)" />
+                </linearGradient>
+              </defs>
+              <!-- Background Ring -->
+              <circle class="progress-ring-bg" cx="90" cy="90" r="70" />
+              <!-- Animated Ring representing 75% progress -->
+              <circle class="progress-ring-bar" cx="90" cy="90" r="70" />
+            </svg>
+            <div class="progress-ring-text">
+              <h3>75%</h3>
+              <p>600 / 800 kcal</p>
+            </div>
+          </div>
+          
+          <p style="color: var(--text-muted); font-size: 0.85rem; text-align: center; margin-top: 10px;">
+            You need 200 more kcal to achieve today's goal!
+          </p>
+        </div>
+
+        <!-- Weekly Workout Plan timeline -->
+        <div class="dashboard-panel-card">
+          <div class="panel-card-header">
+            <h3>Weekly Training Split</h3>
+            <button class="btn btn-secondary btn-sm dashboard-404-btn" style="padding: 6px 12px; font-size: 0.75rem;">Edit Plan</button>
+          </div>
+          
+          <div class="dashboard-list">
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; min-width: 40px; height: 40px;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5 style="text-decoration: line-through; opacity: 0.6;">Monday: Strength Focus</h5>
+                  <p style="opacity: 0.6;">Barbell Deadlifts, Weighted Pull-ups, Core work</p>
+                </div>
+              </div>
+              <span class="badge-status active">Done</span>
+            </div>
+
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; min-width: 40px; height: 40px;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5 style="text-decoration: line-through; opacity: 0.6;">Wednesday: HIIT Conditioning</h5>
+                  <p style="opacity: 0.6;">Rowing sprints, kettlebell complexes, wall-balls</p>
+                </div>
+              </div>
+              <span class="badge-status active">Done</span>
+            </div>
+
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(255, 179, 0, 0.1); color: var(--secondary); min-width: 40px; height: 40px;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5 style="color: var(--secondary);">Friday: Cardiorespiratory / Endurance</h5>
+                  <p>5km tempo run outdoors, active stretching & mobility</p>
+                </div>
+              </div>
+              <span class="badge-status pending">Today</span>
+            </div>
+
+            <div class="dashboard-list-item">
+              <div class="list-item-details">
+                <div class="stat-card-icon" style="background-color: rgba(255,255,255,0.05); color: var(--text-muted); min-width: 40px; height: 40px;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                </div>
+                <div class="list-item-info">
+                  <h5 style="opacity: 0.6;">Sunday: Active Recovery</h5>
+                  <p style="opacity: 0.6;">Hot-cold contrast therapy, sauna session & light walking</p>
+                </div>
+              </div>
+              <span class="badge-status inactive">Pending</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Shortcuts -->
+      <section class="dashboard-panel-card">
+        <div class="panel-card-header">
+          <h3>Member Services</h3>
+        </div>
+        <div class="dashboard-stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 0;">
+          <button class="btn btn-outline-primary dashboard-404-btn">Book Training Session</button>
+          <button class="btn btn-outline-primary dashboard-404-btn">Log Daily Meals</button>
+          <button class="btn btn-outline-primary dashboard-404-btn">View Trainer Notes</button>
+          <button class="btn btn-outline-primary dashboard-404-btn">Download Workout PDF</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

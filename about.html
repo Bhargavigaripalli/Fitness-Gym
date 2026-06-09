@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | APEX Performance & Wellness</title>
+  <meta name="description" content="Learn about the APEX philosophy, meet our team of certified elite trainers, and take a tour of our state-of-the-art facilities.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Subpage Hero specific styling */
+    .sub-hero {
+      height: 350px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+    .sub-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 12, 16, 0.5) 0%,
+        rgba(11, 12, 16, 0.9) 100%
+      );
+      z-index: -1;
+    }
+    .sub-hero-content {
+      width: 100%;
+    }
+    .sub-hero h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .breadcrumbs {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .breadcrumbs span {
+      color: var(--primary);
+      margin: 0 8px;
+    }
+    
+    /* Stats Grid for About */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .about-stat-item {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      text-align: center;
+    }
+    .about-stat-item h3 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+    .about-stat-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Facility Grid */
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .facility-card {
+      position: relative;
+      height: 300px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    .facility-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .facility-card:hover .facility-img {
+      transform: scale(1.1);
+    }
+    .facility-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 80%);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+    .facility-overlay h3 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 768px) {
+      .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .facility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header" id="navbar">
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="logo-link">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        STACKLY<span>.</span>
+      </a>
+      
+      <nav class="nav-menu" id="navigation-menu">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="about.html" class="nav-link active" id="nav-about">About Us</a>
+        <a href="classes.html" class="nav-link" id="nav-classes">Classes & Schedule</a>
+        <a href="bmi.html" class="nav-link" id="nav-bmi">Calorie & BMI</a>
+        <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="login.html" class="nav-link" id="nav-login-link" style="margin-right: 20px; font-weight: 600; font-size: 0.9rem;">Sign In</a>
+        <a href="contact.html" class="btn btn-primary btn-sm" id="nav-cta-btn" style="padding: 10px 20px; font-size: 0.8rem;">
+          Join Now
+        </a>
+        <button class="nav-toggle" id="menu-toggle" aria-label="Toggle navigation Menu" style="margin-left: 20px;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SUBPAGE HERO
+       ========================================================================== -->
+  <section class="sub-hero" style="background-image: url('assets/images/hero.png');" id="about-hero">
+    <div class="sub-hero-overlay"></div>
+    <div class="container">
+      <div class="sub-hero-content reveal reveal-fade">
+        <div class="breadcrumbs">Home <span>/</span> About Us</div>
+        <h1>Our Brand Story</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR STORY / BRAND PHILOSOPHY
+       ========================================================================== -->
+  <section class="section" id="story-section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="reveal reveal-left" id="story-images-layout">
+          <img src="assets/images/trainer-coaching.png" alt="Apex coaching scene" style="border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+        <div class="reveal reveal-right" id="story-text-content" style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="tagline">Who We Are</span>
+          <h2 style="font-size: 2.5rem; margin-bottom: 24px; text-transform: uppercase;">Redefining What's Possible</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem;">
+            Founded in 2021, APEX Performance & Wellness was created to bridge the massive gap between generalized gym chains and clinical athletic coaching. We believe that everyone—from beginners to competitive athletes—deserves access to science-driven training and custom nutrition blueprints.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem;">
+            Our 15,000 square foot facility contains specialized training environments designed to stimulate performance. We reject generic templates. Every program, weight set, and macro allocation is mapped to your distinct physical baseline.
+          </p>
+          
+          <div class="about-stats" id="about-stats-grid">
+            <div class="about-stat-item">
+              <h3>5+</h3>
+              <p>Years active</p>
+            </div>
+            <div class="about-stat-item">
+              <h3>15k+</h3>
+              <p>Happy clients</p>
+            </div>
+            <div class="about-stat-item">
+              <h3>50+</h3>
+              <p>Certified coaches</p>
+            </div>
+            <div class="about-stat-item">
+              <h3>100%</h3>
+              <p>Dedication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MEET THE COACHES SECTION
+       ========================================================================== -->
+  <section class="section section-dark" id="trainers-section">
+    <div class="container">
+      <div class="section-header text-center reveal reveal-up">
+        <span class="tagline">Elite Team</span>
+        <h2>Meet Our Performance Coaches</h2>
+        <p>Our leaders hold advanced degrees in Kinesiology, Sports Nutrition, and Strength & Conditioning.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Trainer 1 -->
+        <div class="trainer-card reveal reveal-up delay-1" id="trainer-alex">
+          <div class="trainer-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=400&auto=format&fit=crop" alt="Coach Alex Mercer" class="trainer-img">
+            <div class="trainer-socials">
+              <a href="#" class="social-icon" aria-label="Alex Mercer Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Alex Mercer Twitter">
+                <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-role">Head of Strength & Conditioning</div>
+            <h3>Alex Mercer</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">B.S. Exercise Physiology, CSCS. Specializes in powerlifting and barbell athletics with 8 years of coaching experience.</p>
+          </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="trainer-card reveal reveal-up delay-2" id="trainer-jessica">
+          <div class="trainer-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=400&auto=format&fit=crop" alt="Coach Jessica Vance" class="trainer-img">
+            <div class="trainer-socials">
+              <a href="#" class="social-icon" aria-label="Jessica Vance Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Jessica Vance Twitter">
+                <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-role">Metabolic Conditioning Specialist</div>
+            <h3>Jessica Vance</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">M.S. Kinesiology, FMS Level 2. Expert in functional mobility, HIIT systems, and active sports injury prevention.</p>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="trainer-card reveal reveal-up delay-3" id="trainer-tyler">
+          <div class="trainer-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1605296867304-46d5465a25f1?q=80&w=400&auto=format&fit=crop" alt="Coach Tyler Durant" class="trainer-img">
+            <div class="trainer-socials">
+              <a href="#" class="social-icon" aria-label="Tyler Durant Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Tyler Durant Twitter">
+                <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="trainer-info">
+            <div class="trainer-role">Senior Performance Nutritionist</div>
+            <h3>Tyler Durant</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Registered Dietitian (RD), Sports Nutrition Specialist. Maps custom cellular refueling and weight manipulation profiles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FACILITY TOUR SECTION
+       ========================================================================== -->
+  <section class="section" id="facility-section">
+    <div class="container">
+      <div class="section-header text-center reveal reveal-up">
+        <span class="tagline">Facility Tour</span>
+        <h2>World-Class Training Environment</h2>
+        <p>Every square foot is optimized for performance, recovery, and structural body health.</p>
+      </div>
+
+      <div class="facility-grid">
+        <!-- Zone 1 -->
+        <div class="facility-card reveal reveal-left" id="facility-zone-strength">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" alt="Strength Zone" class="facility-img">
+          <div class="facility-overlay">
+            <h3>Performance Strength Zone</h3>
+          </div>
+        </div>
+
+        <!-- Zone 2 -->
+        <div class="facility-card reveal reveal-up" id="facility-zone-cardio">
+          <img src="assets/images/hero.png" alt="Cardio Zone" class="facility-img">
+          <div class="facility-overlay">
+            <h3>Endurance Deck</h3>
+          </div>
+        </div>
+
+        <!-- Zone 3 -->
+        <div class="facility-card reveal reveal-right" id="facility-zone-mind">
+          <img src="assets/images/group-class.png" alt="Yoga Zone" class="facility-img">
+          <div class="facility-overlay">
+            <h3>Mind & Flow Studio</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="footer-section">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-brand" id="footer-logo-col">
+          <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            STACKLY<span>.</span>
+          </a>
+          <p>Unlocking human performance and building long-term fitness cultures through structured coaching and elite-tier equipment.</p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-icon" aria-label="Facebook link">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="404.html" class="social-icon" aria-label="Instagram link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="404.html" class="social-icon" aria-label="Twitter/X link">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-column" id="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" id="fl-home">Home</a></li>
+            <li><a href="about.html" id="fl-about">About Us</a></li>
+            <li><a href="classes.html" id="fl-classes">Classes & Programs</a></li>
+            <li><a href="bmi.html" id="fl-bmi">Health Calculator</a></li>
+            <li><a href="contact.html" id="fl-contact">Contact & Join</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-column" id="footer-hours-col">
+          <h3>Operating Hours</h3>
+          <ul class="footer-links" style="color: var(--text-muted); font-size: 0.95rem;">
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Weekdays:</span> <span class="text-light">24 Hours Open</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Saturdays:</span> <span class="text-light">6:00 AM - 10:00 PM</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Sundays:</span> <span class="text-light">8:00 AM - 8:00 PM</span>
+            </li>
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>Public Holidays:</span> <span class="text-primary">Closed</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-column" id="footer-contact-col">
+          <h3>Get In Touch</h3>
+          <ul class="footer-info">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>100 Apex Boulevard, Performance District, FL 33101</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>info@apexperformance.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 APEX Performance & Wellness. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" id="f-privacy">Privacy Policy</a>
+          <a href="#" id="f-terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
