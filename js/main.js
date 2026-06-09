@@ -101,63 +101,113 @@ function initScrollAnimations() {
 /* ==========================================================================
    TESTIMONIALS SLIDER MODULE (VANILLA CAROUSEL)
    ========================================================================== */
-function initTestimonialSlider() {
-  const slider = document.querySelector('.testimonial-slider');
-  const slides = document.querySelectorAll('.testimonial-slide');
-  const dotsContainer = document.querySelector('.slider-dots');
-  
+ function initTestimonialSlider() {
+  const slider = document.querySelector(".testimonial-slider");
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const dotsContainer = document.querySelector(".slider-dots");
+  const prevBtn = document.getElementById("slider-prev");
+  const nextBtn = document.getElementById("slider-next");
+
   if (!slider || slides.length === 0) return;
 
   let currentIndex = 0;
-  let autoplayTimer = null;
+  let autoplayTimer;
+
   const slideCount = slides.length;
 
-  // Generate indicator dots dynamically
+  // Clear existing dots
+  dotsContainer.innerHTML = "";
+
+  // Create dots
   slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+
+    if (index === 0) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
       goToSlide(index);
       resetAutoplay();
     });
+
     dotsContainer.appendChild(dot);
   });
 
-  const dots = document.querySelectorAll('.slider-dots .dot');
+  const dots = document.querySelectorAll(".slider-dots .dot");
 
+  // Change slide
   function goToSlide(index) {
     currentIndex = index;
-    // Shift the slider container horizontally
+
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
-    // Update active dot classes
+
     dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentIndex);
+      dot.classList.toggle("active", idx === currentIndex);
     });
   }
 
+  // Next slide
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slideCount;
+    goToSlide(currentIndex);
+  }
+
+  // Previous slide
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    goToSlide(currentIndex);
+  }
+
+  // Autoplay
   function startAutoplay() {
     autoplayTimer = setInterval(() => {
-      let nextIndex = (currentIndex + 1) % slideCount;
-      goToSlide(nextIndex);
-    }, 5000); // 5 seconds interval
+      nextSlide();
+    }, 5000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
   }
 
   function resetAutoplay() {
-    clearInterval(autoplayTimer);
+    stopAutoplay();
     startAutoplay();
   }
 
-  // Hover pauses slides
-  const container = document.querySelector('.testimonial-section');
-  if (container) {
-    container.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-    container.addEventListener('mouseleave', startAutoplay);
+  // Arrow events
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      resetAutoplay();
+    });
   }
 
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetAutoplay();
+    });
+  }
+
+  // Pause on hover
+  const container = document.querySelector(".testimonial-container");
+
+  if (container) {
+    container.addEventListener("mouseenter", stopAutoplay);
+    container.addEventListener("mouseleave", startAutoplay);
+  }
+
+  // Initialize
+  goToSlide(0);
   startAutoplay();
 }
+
+// Run after page loads
+document.addEventListener("DOMContentLoaded", () => {
+  initTestimonialSlider();
+});
 
 /* ==========================================================================
    CLASS SCHEDULE FILTERING MODULE
@@ -360,9 +410,18 @@ function initCalculators() {
 /* ==========================================================================
    FORM VALIDATION & TOAST NOTIFICATION MODULE
    ========================================================================== */
-function initContactForm() {
+ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
+
+  const phoneInput = document.getElementById('form-phone');
+
+  // Allow only numbers and max 10 digits while typing
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -375,42 +434,76 @@ function initContactForm() {
 
     // Validation patterns
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // Simple digits check for phone
-    const phonePattern = /^\+?[0-9\s\-]{7,15}$/;
+    const phonePattern = /^[0-9]{10}$/;
 
+    // Name validation
     if (!name) {
-      showToast('Validation Error', 'Full Name is a required field.', 'error');
-      return;
-    }
-    if (!email || !emailPattern.test(email)) {
-      showToast('Validation Error', 'Please enter a valid email address.', 'error');
-      return;
-    }
-    if (phone && !phonePattern.test(phone)) {
-      showToast('Validation Error', 'Please enter a valid contact phone number.', 'error');
-      return;
-    }
-    if (!message) {
-      showToast('Validation Error', 'Message content is required.', 'error');
+      showToast(
+        'Validation Error',
+        'Full Name is a required field.',
+        'error'
+      );
       return;
     }
 
-    // Form inputs verified - trigger simulated loading state
+    // Email validation
+    if (!email || !emailPattern.test(email)) {
+      showToast(
+        'Validation Error',
+        'Please enter a valid email address.',
+        'error'
+      );
+      return;
+    }
+
+    // Phone validation
+    if (!phone) {
+      showToast(
+        'Validation Error',
+        'Phone number is required.',
+        'error'
+      );
+      return;
+    }
+
+    if (!phonePattern.test(phone)) {
+      showToast(
+        'Validation Error',
+        'Phone number must contain exactly 10 digits.',
+        'error'
+      );
+      return;
+    }
+
+    // Message validation
+    if (!message) {
+      showToast(
+        'Validation Error',
+        'Message content is required.',
+        'error'
+      );
+      return;
+    }
+
+    // Loading state
     const originalText = btnSubmit.innerHTML;
     btnSubmit.disabled = true;
     btnSubmit.innerHTML = 'Sending details...';
 
     setTimeout(() => {
-      // Reset form on success
       form.reset();
+
       btnSubmit.disabled = false;
       btnSubmit.innerHTML = originalText;
-      
-      showToast('Success!', 'Your membership enquiry has been sent. Our team will contact you shortly.', 'success');
-    }, 1500); // 1.5s simulation
+
+      showToast(
+        'Success!',
+        'Your membership enquiry has been sent. Our team will contact you shortly.',
+        'success'
+      );
+    }, 1500);
   });
 }
-
 /**
  * Global Custom Toast System
  */
