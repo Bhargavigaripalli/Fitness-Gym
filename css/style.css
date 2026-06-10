@@ -826,6 +826,7 @@ button, input, textarea, select {
   font-size: 1.4rem;
   margin-bottom: 12px;
 }
+ 
 
 /* ==========================================================================
    CLASS SCHEDULE & FILTER (CLASSES PAGE)
@@ -2179,5 +2180,107 @@ button, input, textarea, select {
     height: 3px;
     background-color: #fff;
     border-radius: 3px;
+  }
+}
+/* ==========================================
+   EXTRA SMALL DEVICES (360px)
+========================================== */
+
+@media (max-width: 360px) {
+
+  .container{
+    padding: 0 15px;
+  }
+
+  /* Header */
+  .header{
+    height: 65px;
+  }
+
+  .logo{
+    font-size: 1.1rem;
+  }
+
+  .logo svg{
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-menu{
+    width: 240px;
+  }
+
+  /* Hero */
+  .hero{
+    padding-top: 100px;
+  }
+
+  .hero-title{
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .hero-desc{
+    font-size: 0.9rem;
+  }
+
+  .hero-btns{
+    gap: 12px;
+  }
+
+  .hero-btns .btn{
+    width: 100%;
+  }
+
+  /* Cards */
+  .glass-badge,
+  .feature-card,
+  .trainer-card,
+  .pricing-card{
+    width: 100%;
+  }
+
+  /* Section Headings */
+  .section-header h2{
+    font-size: 1.7rem;
+  }
+
+  /* Trainer */
+  .trainer-img-wrapper{
+    height: 280px;
+  }
+
+  .trainer-info{
+    padding: 18px;
+  }
+
+  .trainer-info h3{
+    font-size: 1.2rem;
+  }
+
+  /* Calculator */
+  .calc-wrapper{
+    padding: 20px 15px;
+  }
+
+  /* Contact Form */
+  .contact-form-wrapper{
+    padding: 20px 15px;
+  }
+
+  input,
+  select,
+  textarea{
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer{
+    text-align:center;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
   }
 }

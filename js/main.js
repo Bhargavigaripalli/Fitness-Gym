@@ -414,12 +414,24 @@ function initCalculators() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  const nameInput = document.getElementById('form-name');
   const phoneInput = document.getElementById('form-phone');
 
-  // Allow only numbers and max 10 digits while typing
+  // Name: Only letters & spaces, max 16 chars
+  if (nameInput) {
+    nameInput.addEventListener('input', function () {
+      this.value = this.value
+        .replace(/[^a-zA-Z\s]/g, '')
+        .slice(0, 16);
+    });
+  }
+
+  // Phone: Only numbers, max 10 digits
   if (phoneInput) {
     phoneInput.addEventListener('input', function () {
-      this.value = this.value.replace(/\D/g, '').slice(0, 10);
+      this.value = this.value
+        .replace(/\D/g, '')
+        .slice(0, 10);
     });
   }
 
@@ -430,24 +442,53 @@ function initCalculators() {
     const email = document.getElementById('form-email').value.trim();
     const phone = document.getElementById('form-phone').value.trim();
     const message = document.getElementById('form-message').value.trim();
+
     const btnSubmit = form.querySelector('button[type="submit"]');
 
-    // Validation patterns
+    // Validation Patterns
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phonePattern = /^[0-9]{10}$/;
+    const namePattern = /^[A-Za-z\s]+$/;
 
-    // Name validation
+    // Name Validation
     if (!name) {
       showToast(
         'Validation Error',
-        'Full Name is a required field.',
+        'Full Name is required.',
         'error'
       );
       return;
     }
 
-    // Email validation
-    if (!email || !emailPattern.test(email)) {
+    if (!namePattern.test(name)) {
+      showToast(
+        'Validation Error',
+        'Name should contain only letters and spaces.',
+        'error'
+      );
+      return;
+    }
+
+    if (name.length > 16) {
+      showToast(
+        'Validation Error',
+        'Full Name cannot exceed 16 characters.',
+        'error'
+      );
+      return;
+    }
+
+    // Email Validation
+    if (!email) {
+      showToast(
+        'Validation Error',
+        'Email Address is required.',
+        'error'
+      );
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
       showToast(
         'Validation Error',
         'Please enter a valid email address.',
@@ -456,11 +497,11 @@ function initCalculators() {
       return;
     }
 
-    // Phone validation
+    // Phone Validation
     if (!phone) {
       showToast(
         'Validation Error',
-        'Phone number is required.',
+        'Phone Number is required.',
         'error'
       );
       return;
@@ -469,13 +510,13 @@ function initCalculators() {
     if (!phonePattern.test(phone)) {
       showToast(
         'Validation Error',
-        'Phone number must contain exactly 10 digits.',
+        'Phone Number must contain exactly 10 digits.',
         'error'
       );
       return;
     }
 
-    // Message validation
+    // Message Validation
     if (!message) {
       showToast(
         'Validation Error',
@@ -485,8 +526,9 @@ function initCalculators() {
       return;
     }
 
-    // Loading state
+    // Loading State
     const originalText = btnSubmit.innerHTML;
+
     btnSubmit.disabled = true;
     btnSubmit.innerHTML = 'Sending details...';
 
