@@ -826,7 +826,16 @@ button, input, textarea, select {
   font-size: 1.4rem;
   margin-bottom: 12px;
 }
- 
+ .trainer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: var(--transition);
+  
+  /* Add this line to hide browser hover tools */
+  pointer-events: none; 
+}
 
 /* ==========================================================================
    CLASS SCHEDULE & FILTER (CLASSES PAGE)
